@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: #101617;
+    color: #ffffff99;
+    display: grid;
+    grid-template: 1fr 10fr 1fr / 100%;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #94db12;
+    transition: 1s;
+}
+
+a:hover {
+    color: #94db1299;
+    transition: 1s;
+}
+
+header {
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #131313;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #000;
+    z-index: 1;
+}
+
+#app-name {
+    font-family: 'Chokokutai', cursive;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    color: #f3f4f6;
+    transition: 1s;
+}
+
+#app-name:hover {
+    color: #94db1299;
+    transition: 1s;
+}
+
+/* #long-app-name {
+    display: none;
+} */
+
+/* @media screen and (min-width: 1000px) {
+    #long-app-name {
+        display: block;
+    }
+    #short-app-name {
+        display: none;
+} */
+
+#logo-wrapper {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+#settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+#settings div {
+    border: solid thin #191e1e;
+    border-radius: 7px;
+    box-shadow: 3px 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.option-settings {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.default-style, .setting-type {
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    border: none;
+    border-left: solid thin #191e1e;
+    background-color: #00000000;
+    text-transform: capitalize;
+    min-width: 100px;
+}
+
+.setting-type {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0.5rem;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 500;
+}
+
+.default-style {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+.default-style:hover {
+    background-color: rgba(24, 24, 24, 0.7);
+    color: #ffffff;
+}
+
+.selected-style, .selected-style:hover {
+    color: #94db12;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.selected-style:active {
+    animation: blink 0.1ms;
+}
+
+#restart {
+    margin: 0;
+    padding: 5px 20px;
+    border-radius: 1px;
+    background-color: #191e1e;
+    border: solid 1px #1d1f21;
+    color: #94db12;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+
+#restart:hover {
+    /*background-color: #101010;*/
+    /* background-color: #1d1f21; */
+    border: solid 1px #0e0e0e;
+    /* font-weight: 600; */
+    transition: 0.30s;
+    background-color: #94db12;
+    color: #101617;
+    color: #000;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #1d1f21;
+}
+
+footer {
+    background-color: #0e0e0e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #000;
+    z-index: 1;
+}
+
+
+#board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 12px 12px 3px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #36494b3b;
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    background-color: #101617;
+}
+
+.cell:hover {
+    background-color: #101416;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#result-text {
+    margin: 0;
+}
+
+.side-icon {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: 0.1s;
+    animation: typewriter 1s steps(40) 0.1s 1 normal both;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.circle {
+    fill: #7dfa9a;
+}
+
+.cross {
+    fill: #7eecfc;
+}
+
+.circle:hover {
+    /*animation: spin 1s linear infinite;*/
+}
+
+.cross:hover {
+    /*animation: typewriter 1s steps(40) 1s 1 normal both;*/
+}
+
+/* create a fadein typewriter effect  animation */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* create a fadein spin effect  animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* create a fadein blink effect  animation */
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 1px 7px 7px 1px;
+    background: #171717;
+    color: var(--terminal-green);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    padding: 0 1rem;
+    margin: 1rem;
+    /*text-shadow: .001rem .001rem .001rem #ffff00;*/
+    border-left: solid 1px #ffffff55;
+}
+
+select option {
+    background: #171717;
+    color: var(--terminal-green);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    padding: 0 1rem;
+    /*text-shadow: .01rem .01rem .01rem #D7D7D7;*/
+}
+
+select:focus {
+    outline: none;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+select:disabled {
+    color: var(--dark-300);
+    background: var(--dark-700);
+}
+
+.disabled {
+    color: var(--dark-300);
+    background: var(--dark-700);
+}
+
+.picker-title {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    color: #419b65;
+    color: #008EF0;
+    color: #00c412;
+    font-size: .7rem;
+    font-weight: 700;
+    /*width: 50px;*/
+    height: 30px;
+    background-color: #171717;
+    border: solid 1px #ffffff55;
+    border-radius: 7px;
+    padding-left: 1rem;
+    /*border-right: none;*/
+}
+
+
+#client-location-wrapper {
+    gap: .1rem;
+}
+
+#time-data, #weather-data {
+    font-weight: 500;
+}
+
+#city {
+    margin-left: .3rem; /* to align with previous p element  */
+}
+
+.dot {
+    height: 3px;
+    width: 3px;
+    border: solid 1px #4b6c8c;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* The following declaration MUST be the last lines in this file to make sure
+this rule has the highest specificity which overrides the default browser styles
+and all  other ruleset in this file regardless of design for accessibility.
+This rule makes sure every focusable element has a focus outline with all four borders visible */
+*:focus {
+    /*--moz-outline: 0.001rem solid #94db12;*/
+    /*--webkit-outline: 0.001rem solid #94db12;*/
+    /*border: 0.001rem solid #94db12;*/
+    /*outline: 0.001rem solid #94db12;*/
+}

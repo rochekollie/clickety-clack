@@ -1,0 +1,21 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "A new generation advanced interactive tictactoe game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "type": "module",
+  "keywords": [
+    "tictactoe",
+    "javascript-game",
+    "frontend-project",
+    "beginner-project"
+  ],
+  "author": "rochekollie",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}

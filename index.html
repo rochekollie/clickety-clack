@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--    favicon-->
+    <link rel="icon" href="./assets/logo/logo.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!--    Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Chokokutai&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Monomaniac+One&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+<header>
+    <a id="logo-wrapper" href="./">
+        <img id="logo" src="./assets/logo/logo.png" alt="Logo"
+             width="200" height="50">
+        <h1 id="app-name"><span id="long-app-name">Tic Tac Toe</span><!--<span id="short-app-name">Home</span>--></h1>
+    </a>
+    <div id="settings">
+        <!-- <div id="game" class="option-settings">
+            <label for="game" class="setting-type">Game
+                <select name="game" id="games">
+                    <option value="tic-tac-toe">Tic Tac Toe</option>
+                    <option value="connect-four">Connect Four</option>
+                    <option value="connect-four">Binary Playground
+                    </option>
+                </select>
+            </label>
+        </div> -->
+        <div id="side" class="option-settings">
+            <span class="setting-type">Side</span>
+            <button id="x" class="default-style">X</button>
+            <button id="o" class="default-style">O</button>
+        </div>
+        <div id="difficulty" class="option-settings">
+            <span class="setting-type">Difficulty</span>
+            <button id="easy" class="default-style">Easy</button>
+            <button id="hard" class="default-style">Hard</button>
+        </div>
+        <div id="opponent" class="option-settings">
+            <span class="setting-type">Opponent</span>
+            <button id="computer"
+                    class="default-style">Computer
+            </button>
+            <button id="human" class="default-style">Human</button>
+        </div>
+        <!-- <div id="time" class="option-settings">
+            <span class="setting-type">Opponent</span>
+            <button id="computer"
+                class="default-style">Computer</button>
+            <button id="human" class="default-style">Human</button>
+        </div> -->
+        <!-- <div id="client-location-wrapper"
+            class="flex jc-flex-end ai-center">
+            <p id="time-data" class="flex jc-center ai-center gap-0-5x">
+                <span id="date"></span>
+                <span class="dot"></span>
+                <span id="time"></span>
+                <span class="dot"></span>
+            </p>
+            <p id="weather-data"
+                class="flex jc-center ai-center gap-0-5x">
+                <span id="city">Baltimore</span>
+                <span id="temp">77<sup>&deg;</sup></span>
+            </p>
+        </div> -->
+    </div>
+    <button id="restart">Restart game</button>
+</header>
+
+<main>
+    <div id="board">
+        <div class="row">
+            <button class="cell" id="0"></button>
+            <button class="cell" id="1"></button>
+            <button class="cell" id="2"></button>
+        </div>
+        <div class="row">
+            <button class="cell" id="3"></button>
+            <button class="cell" id="4"></button>
+            <button class="cell" id="5"></button>
+        </div>
+        <div class="row">
+            <button class="cell" id="6"></button>
+            <button class="cell" id="7"></button>
+            <button class="cell" id="8"></button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>
+        Copyright &copy; <span id="copyright">2023</span> | Developed with &hearts; by <a
+            href="https://rochekollie.com>" target="_blank">Roche Kollie</a>
+    </p>
+    <div>
+        <div id="result">
+            <h2 id="result-text"></h2>
+        </div>
+    </div>
+    <button id="reload">Reload</button>
+    <p>
+        Edit on <a href="https://github.com/rochekollie/tic-tac-toe"
+                   target="_blank">GitHub</a>
+    </p>
+</footer>
+
+</body>
+<script src="index.js" type="module"></script>
+
+</html>
